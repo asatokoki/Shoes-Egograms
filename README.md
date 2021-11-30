@@ -1,4 +1,8 @@
 # README
+
+
+
+
 ##アプリケーション名
 <ShoesEgograms>
 
