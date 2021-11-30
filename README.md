@@ -1,10 +1,6 @@
 # README
 
-
-
-
-#アプリケーション名
-<ShoesEgograms>
+#アプリケーション名<Shoes Egograms>
 
 ## サイト概要
 <靴による性格診断Webアプリケーション>
