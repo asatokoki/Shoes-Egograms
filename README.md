@@ -27,8 +27,7 @@ Shoes Egograms
 <...>
 
 ## チャレンジ要素一覧
-https://docs.google.com/spreadsheets/d/1VMjye39O2nZgIzOFdLGtWKKlKOeeewYQuVwH7tqnbgE/edit#gid=0
-
+https://docs.google.com/spreadsheets/d/1VMjye39O2nZgIzOFdLGtWKKlKOeeewYQuVwH7tqnbgE/edit?usp=sharing
 ## 開発環境
 - OS：Mac
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
