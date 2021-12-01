@@ -1,5 +1,3 @@
-# README
-
 # Shoes Egograms
 
 ## サイト概要
