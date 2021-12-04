@@ -34,9 +34,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # 名前
       t.string :name
       # 年齢
-      t.string :age
+      t.integer :age
       # 性別
-      t.integer :gender
+      t.string :gender
       # プロフィール画像
       t.string :profile_image_id 
       # 仕事
@@ -44,11 +44,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # 仕事詳細
       t.string :job_details
       # 年収
-      t.string :annual_income
+      t.integer :annual_income
       # 趣味
-      t.integer :hobbies
+      t.string :hobbies
       # 趣味詳細
-      t.integer :hobbies_details
+      t.string :hobbies_details
       t.timestamps null: false
     end
 

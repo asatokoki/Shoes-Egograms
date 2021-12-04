@@ -1,0 +1,7 @@
+<h1>靴のインデックス</h1>
+
+<% @users.each do |user| %>
+ <%#= attachment_image_tag user, :profile_image, format: 'jpeg', size: '100x100' %>
+ <%= attachment_image_tag user, :profile_image,  size: "100x100" %>
+
+<% end %>

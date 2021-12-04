@@ -1,5 +1,5 @@
 class TopController < ApplicationController
-  def
+  def top
     
   end
 end
