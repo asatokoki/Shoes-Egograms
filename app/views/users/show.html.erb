@@ -1,2 +1,12 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+
+<%= attachment_image_tag @user, :profile_image,  size: "100x100" %>
+
+<p>私の名前は<%= @user.name %>です。<br>
+    年齢<%= @user.age %>歳です。<br>
+    性別は<%= @user.gender %>です<br>
+    職業は <%= @user.job %>で<br>
+    <%= @user.job_details %>しています<br>
+    年収は<%= @user.annual_income %>万円です。<br>
+    趣味は<%= @user.hobbies %>で<br>
+    <%= @user.hobbies_details %>です。
+</p>
