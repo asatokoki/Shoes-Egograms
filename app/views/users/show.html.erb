@@ -10,3 +10,23 @@
     趣味は<%= @user.hobbies %>で<br>
     <%= @user.hobbies_details %>です。
 </p>
+
+<%= @questions.sample %>
+<div>
+  <input type="radio" name="npq" value="0">
+  <label for="いいえ">いいえ</label>
+</div>
+
+<div>
+  <input type="radio" name="npq" value="1">
+  <label for="どちらでもない">どちらでもない</label>
+</div>
+
+<div>
+  <input type="radio" name="npq" value="2">
+  <label for="はい">はい</label>
+</div>
+
+<input type="submit" value="送信">
+
+
