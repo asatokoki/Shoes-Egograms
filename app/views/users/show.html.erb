@@ -13,15 +13,53 @@
 
 
 
-<%= form_with(model: cp_point, local: true) do |form| %>
-<%= @cp_questions.sample %>
-  <%= form.radio_button :cp_point, 0 %>
-  <%= form.label :cp_point, "いいえ", {value: 0, style: "display: inline-block;"} %>
-  <%= form.radio_button :cp_point, 1 %>
-  <%= form.label :cp_point, "どちらでもない", {value: 1, style: "display: inline-block;"} %>
-  <%= form.radio_button :cp_point, 2 %>
-  <%= form.label :cp_point, "はい", {value: 2, style: "display: inline-block;"} %>
+<%#= form_with model: @cp_point do |form| %>
+  <%#= @cp_questions.sample %>
+  <%#= form.radio_button :point, 0 %>
+  <%#= form.label :point, "いいえ", {value: 0, style: "display: inline-block;"} %>
+  <%#= form.radio_button :point, 1 %>
+  <%#= form.label :point, "どちらでもない", {value: 1, style: "display: inline-block;"} %>
+  <%#= form.radio_button :point, 2 %>
+  <%#= form.label :point, "はい", {value: 2, style: "display: inline-block;"} %>
+  <!--form.hidden_fieldを使うことによってvalue: params[:id]のURLの値を取って、submitで送信している。＊見えている情報しか送ってはならない。-->
+  <%#= form.hidden_field :evaluated_user_id, value: params[:id] %>
+  <%#= form.submit 'Create Book' %>
+<%# end %>
+<!--とりあえずCPポイントコントローラにまとめてる。rails routes参照-->
+<%= form_tag "/cp_points", method: :post do |f| %>
+  <%= @cp_questions.sample %>
+  <%= f.radio_button :point, 0 %>
+  <%= f.radit_button_tag, :point, "いいえ", {value: 0, style: "display: inline-block;"} %>
+  
+  <%= f.radio_button :point, 1 %>
+  <%= f.label :point, "どちらでもない", {value: 1, style: "display: inline-block;"} %>
+  
+  <%= f.radio_button :point, 2 %>
+  <%= f.label :point, "はい", {value: 2, style: "display: inline-block;"} %>
 
-  <%= form.submit 'Create Book' %>
+
+  <%= @np_questions.sample %>
+   <%= f.radit_button_tag, :np_point, "いいえ", {value: 0, style: "display: inline-block;"} %>
+
+   <%= @questions.sample %>
+   <%= f.radit_button_tag, :xx_point, "いいえ", {value: 0, style: "display: inline-block;"} %>
+
+   <%= f.hidden_field_tag :evaluated_user_id, value: params[:id] %>
+   <%= f.submit 'Create Book' %>
 <% end %>
+
+
+{cp_poin: 1, np_point: 0, xx_point: 5}
+
+
+
+@cp_point = CpPoint.new
+@cp_point.point = params[:cp_point]
+@cp_point.save
+
+@np_point = NpPoint.new
+@np_point.point = params[:np_point]
+@np_point.save
+
+
 

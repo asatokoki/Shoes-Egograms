@@ -5,7 +5,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    cp_point
+
+    @cp_point = CpPoint.new
 
     @cp_questions = ["あなたは人を許せませんか？","あなたは怒りっぽいですか？","あなたは寡黙ですか？","あなたは怖いですか？"]
     @np_questions = ["あなたは優しいですか？", "あなたに母性はありますか？"]
@@ -16,14 +17,26 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
+    @cp_point.update(cp_point_params)
     redirect_to  user_path(current_user)
   end
 
-  private
-  def user_params
-  	params.require(:user).permit(:cp_point, :np_point, :a_point, :fc_point, :ac_point)
+  
+  
+  def np_point_params
+  	params.require(:cp_point).permit(:point)
   end
-
+  
+  def a_point_params
+  	params.require(:cp_point).permit(:point)
+  end
+  
+  def fc_point_params
+  	params.require(:cp_point).permit(:point)
+  end
+  
+  def ac_point_params
+  	params.require(:cp_point).permit(:point)
+  end
 
 end
