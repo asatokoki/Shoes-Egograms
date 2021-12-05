@@ -1,0 +1,27 @@
+
+<%= attachment_image_tag @user, :profile_image,  size: "100x100" %>
+
+<p>私の名前は<%= @user.name %>です。<br>
+    年齢<%= @user.age %>歳です。<br>
+    性別は<%= @user.gender %>です<br>
+    職業は <%= @user.job %>で<br>
+    <%= @user.job_details %>しています<br>
+    年収は<%= @user.annual_income %>万円です。<br>
+    趣味は<%= @user.hobbies %>で<br>
+    <%= @user.hobbies_details %>です。
+</p>
+
+
+
+<%= form_with(model: cp_point, local: true) do |form| %>
+<%= @cp_questions.sample %>
+  <%= form.radio_button :cp_point, 0 %>
+  <%= form.label :cp_point, "いいえ", {value: 0, style: "display: inline-block;"} %>
+  <%= form.radio_button :cp_point, 1 %>
+  <%= form.label :cp_point, "どちらでもない", {value: 1, style: "display: inline-block;"} %>
+  <%= form.radio_button :cp_point, 2 %>
+  <%= form.label :cp_point, "はい", {value: 2, style: "display: inline-block;"} %>
+
+  <%= form.submit 'Create Book' %>
+<% end %>
+
