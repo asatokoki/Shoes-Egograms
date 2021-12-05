@@ -5,8 +5,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
-    @cp_point = CpPoint.new
+    
+    #↓これはform_withの時にモデルに送るためにインスタンス変数を用意してた
+    #@cp_point = CpPoint.new
 
     @cp_questions = ["あなたは人を許せませんか？","あなたは怒りっぽいですか？","あなたは寡黙ですか？","あなたは怖いですか？"]
     @np_questions = ["あなたは優しいですか？", "あなたに母性はありますか？"]
@@ -21,22 +22,6 @@ class UsersController < ApplicationController
     redirect_to  user_path(current_user)
   end
 
-  
-  
-  def np_point_params
-  	params.require(:cp_point).permit(:point)
-  end
-  
-  def a_point_params
-  	params.require(:cp_point).permit(:point)
-  end
-  
-  def fc_point_params
-  	params.require(:cp_point).permit(:point)
-  end
-  
-  def ac_point_params
-  	params.require(:cp_point).permit(:point)
-  end
+
 
 end

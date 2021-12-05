@@ -25,41 +25,77 @@
   <%#= form.hidden_field :evaluated_user_id, value: params[:id] %>
   <%#= form.submit 'Create Book' %>
 <%# end %>
-<!--とりあえずCPポイントコントローラにまとめてる。rails routes参照-->
-<%= form_tag "/cp_points", method: :post do |f| %>
-  <%= @cp_questions.sample %>
-  <%= f.radio_button :point, 0 %>
-  <%= f.radit_button_tag, :point, "いいえ", {value: 0, style: "display: inline-block;"} %>
-  
-  <%= f.radio_button :point, 1 %>
-  <%= f.label :point, "どちらでもない", {value: 1, style: "display: inline-block;"} %>
-  
-  <%= f.radio_button :point, 2 %>
-  <%= f.label :point, "はい", {value: 2, style: "display: inline-block;"} %>
 
+<!--とりあえずCPポイントコントローラにまとめてる。rails routes参照-->
+<%= form_tag "/cp_points", method: :post do %>
+  <!--users_controlleの配列でまとめてるところからランダムでcpの質問を出す-->
+  <%= @cp_questions.sample %>
+  <%= label_tag :cp_point, "いいえ" %>
+  <%= radio_button_tag :cp_point, 0 %>
+  <%= label_tag :cp_point, "どちらでもない" %>
+  <%= radio_button_tag :cp_point, 1 %>
+  <%= label_tag :cp_point, "はい" %>
+  <%= radio_button_tag :cp_point, 2 %>
 
   <%= @np_questions.sample %>
-   <%= f.radit_button_tag, :np_point, "いいえ", {value: 0, style: "display: inline-block;"} %>
+  <%= label_tag :np_point, "いいえ" %>
+  <%= radio_button_tag :np_point, 0 %>
+  <%= label_tag :np_point, "どちらでもない" %>
+  <%= radio_button_tag :np_point, 1 %>
+  <%= label_tag :np_point, "はい" %>
+  <%= radio_button_tag :np_point, 2 %>
 
-   <%= @questions.sample %>
-   <%= f.radit_button_tag, :xx_point, "いいえ", {value: 0, style: "display: inline-block;"} %>
+  <%= @a_questions.sample %>
+  <%= label_tag :a_point, "いいえ" %>
+  <%= radio_button_tag :a_point, 0 %>
+  <%= label_tag :a_point, "どちらでもない" %>
+  <%= radio_button_tag :a_point, 1 %>
+  <%= label_tag :a_point, "はい" %>
+  <%= radio_button_tag :a_point, 2 %>
 
-   <%= f.hidden_field_tag :evaluated_user_id, value: params[:id] %>
-   <%= f.submit 'Create Book' %>
+  <%= @fc_questions.sample %>
+  <%= label_tag :fc_point, "いいえ" %>
+  <%= radio_button_tag :fc_point, 0 %>
+  <%= label_tag :fc_point, "どちらでもない" %>
+  <%= radio_button_tag :fc_point, 1 %>
+  <%= label_tag :fc_point, "はい" %>
+  <%= radio_button_tag :fc_point, 2 %>
+
+  <%= @ac_questions.sample %>
+  <%= label_tag :ac_point, "いいえ" %>
+  <%= radio_button_tag :ac_point, 0 %>
+  <%= label_tag :ac_point, "どちらでもない" %>
+  <%= radio_button_tag :ac_point, 1 %>
+  <%= label_tag :ac_point, "はい" %>
+  <%= radio_button_tag :ac_point, 2 %>
+
+
+  <%#= radio_button_tag :cp_point, "いいえ", {value: 0, style: "display: inline-block;"} %>
+  <%#= radio_button_tag :point, 1 %>
+  <%#= radio_button_tag :cp_point, "どちらでもない", {value: 1, style: "display: inline-block;"} %>
+  <%#= radio_button_tag :point, 2 %>
+  <%#= radio_button_tag :cp_point, "はい", {value: 2, style: "display: inline-block;"} %>
+
+
+   <!--評価された人のIDが必要だからhidden_fieldでURLから取ってきてる。-->
+   <%#= f.hidden_field_tag :evaluated_user_id, value: params[:id] %>
+   <%#= f.submit 'Create Book' %>
+   <%= hidden_field_tag :evaluated_user_id, value: params[:id] %>
+   <%= submit_tag 'Create Book' %>
 <% end %>
 
 
-{cp_poin: 1, np_point: 0, xx_point: 5}
+<!--{cp_poin: 1, np_point: 0, xx_point: 5}-->
 
 
 
-@cp_point = CpPoint.new
-@cp_point.point = params[:cp_point]
-@cp_point.save
+<!--@cp_point = CpPoint.new-->
+<!--@cp_point.point = params[:cp_point]-->
+<!--@cp_point.save-->
 
-@np_point = NpPoint.new
-@np_point.point = params[:np_point]
-@np_point.save
+<!--@np_point = NpPoint.new-->
+<!--@np_point.point = params[:np_point]-->
+<!--@np_point.save-->
 
 
 
