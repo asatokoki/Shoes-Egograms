@@ -27,7 +27,7 @@
 <%# end %>
 
 <!--とりあえずCPポイントコントローラにまとめてる。rails routes参照-->
-<%= form_tag "/cp_points", method: :post do %>
+<%= form_tag "/points", method: :post do %>
   <!--users_controlleの配列でまとめてるところからランダムでcpの質問を出す-->
   <%= @cp_questions.sample %>
   <%= label_tag :cp_point, "いいえ" %>

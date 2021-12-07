@@ -5,11 +5,14 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   devise_for :users
   resources :users
-  resources :cp_points, only: [:create, :new, :update]
-  resources :np_points, only: [:create, :new, :update]
-  resources :a_points, only: [:create, :new, :update]
-  resources :fc_points, only: [:create, :new, :update]
-  resources :ac_points, only: [:create, :new, :update]
+
+  resources :points, only: [:create, :new, :update]
+  #form_tagでコントローラーで保存してるから不要
+  #resources :cp_points, only: [:create, :new, :update]
+  #resources :np_points, only: [:create, :new, :update]
+  #resources :a_points, only: [:create, :new, :update]
+  #resources :fc_points, only: [:create, :new, :update]
+  #resources :ac_points, only: [:create, :new, :update]
   resources :products
 
 end

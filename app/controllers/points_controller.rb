@@ -1,4 +1,4 @@
-class CpPointsController < ApplicationController
+class PointsController < ApplicationController
   def create #{cp_poin: 1, np_point: 0, a_point: 5, evaluted_user_id: 3}
     @cp_point = CpPoint.new
     @cp_point.answerer_id = current_user.id
@@ -31,6 +31,7 @@ class CpPointsController < ApplicationController
     @ac_point.save
 
 
+   # redirect_to user_path(@cp_point.evaluated_user_id)cp_pointの引数でもどる。他の引数でもいい。
 
     redirect_to user_path(@cp_point.evaluated_user_id)
 
@@ -46,3 +47,4 @@ end
 # @cp_point = CpPoint.new
 # @cp_point.point = params[:cp_point]
 # @cp_point.save
+
