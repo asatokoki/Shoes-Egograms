@@ -32,7 +32,8 @@ class CpPointsController < ApplicationController
 
 
 
-    redirect_to root_path
+    redirect_to user_path(@cp_point.evaluated_user_id)
+
   end
   #↓それぞれの項目で分けていたときに使っていた。form_tagでまとめたことによって不要
   #private
