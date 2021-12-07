@@ -1,5 +1,6 @@
 class CpPoint < ApplicationRecord
-  belongs_to :user, foreign_key: "answerer_id"#, as: "Answer"
+  belongs_to :answerer, class_name: 'User', foreign_key: "answerer_id"#, as: "Answer"
+  belongs_to :evaluated_user, class_name: 'User', foreign_key: 'evaluated_user_id'
   #belongs_to :user, foreign_key: "evaluated_user_id", as: "EvalutedUser"
 
   #答えた人を取りたい場合
