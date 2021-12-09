@@ -10,7 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_04_095917) do
+ActiveRecord::Schema.define(version: 2021_12_05_060503) do
+
+  create_table "a_points", force: :cascade do |t|
+    t.integer "answerer_id"
+    t.integer "evaluated_user_id"
+    t.integer "point"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ac_points", force: :cascade do |t|
+    t.integer "answerer_id"
+    t.integer "evaluated_user_id"
+    t.integer "point"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cp_points", force: :cascade do |t|
+    t.integer "answerer_id"
+    t.integer "evaluated_user_id"
+    t.integer "point"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fc_points", force: :cascade do |t|
+    t.integer "answerer_id"
+    t.integer "evaluated_user_id"
+    t.integer "point"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "np_points", force: :cascade do |t|
+    t.integer "answerer_id"
+    t.integer "evaluated_user_id"
+    t.integer "point"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.string "size"
+    t.string "status"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
