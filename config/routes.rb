@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
+  scope module: :admin do
+    devise_for :admins, skip: [:registrations, :passwords], controllers: {
+      sessions: "admins/sessions"
+    }
+  end
 
-  devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
-  sessions: "admin/sessions"
-}
-  get 'cp_points/create'
+
+  namespace :admins do
+    resources :users
+    resources :egograms
+    # resources :order_detail, only: [:update]
+
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'homes#top'
   devise_for :users
