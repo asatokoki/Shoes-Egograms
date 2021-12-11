@@ -1,0 +1,102 @@
+
+<%= attachment_image_tag @user, :profile_image,  size: "100x100" %>
+
+<p>私の名前は<%= @user.name %>です。<br>
+    年齢<%= @user.age %>歳です。<br>
+    性別は<%= @user.gender %>です<br>
+    職業は <%= @user.job %>で<br>
+    <%= @user.job_details %>しています<br>
+    年収は<%= @user.annual_income %>万円です。<br>
+    趣味は<%= @user.hobbies %>で<br>
+    <%= @user.hobbies_details %>です。
+</p>
+
+
+
+<%#= form_with model: @cp_point do |form| %>
+  <%#= @cp_questions.sample %>
+  <%#= form.radio_button :point, 0 %>
+  <%#= form.label :point, "いいえ", {value: 0, style: "display: inline-block;"} %>
+  <%#= form.radio_button :point, 1 %>
+  <%#= form.label :point, "どちらでもない", {value: 1, style: "display: inline-block;"} %>
+  <%#= form.radio_button :point, 2 %>
+  <%#= form.label :point, "はい", {value: 2, style: "display: inline-block;"} %>
+  <!--form.hidden_fieldを使うことによってvalue: params[:id]のURLの値を取って、submitで送信している。＊見えている情報しか送ってはならない。-->
+  <%#= form.hidden_field :evaluated_user_id, value: params[:id] %>
+  <%#= form.submit 'Create Book' %>
+<%# end %>
+
+<!--とりあえずCPポイントコントローラにまとめてる。rails routes参照-->
+<%= form_tag "/points", method: :post do %>
+  <!--users_controlleの配列でまとめてるところからランダムでcpの質問を出す-->
+  <%= @cp_questions.sample %>
+  <%= label_tag :cp_point, "いいえ" %>
+  <%= radio_button_tag :cp_point, 0 %>
+  <%= label_tag :cp_point, "どちらでもない" %>
+  <%= radio_button_tag :cp_point, 1 %>
+  <%= label_tag :cp_point, "はい" %>
+  <%= radio_button_tag :cp_point, 2 %>
+
+  <%= @np_questions.sample %>
+  <%= label_tag :np_point, "いいえ" %>
+  <%= radio_button_tag :np_point, 0 %>
+  <%= label_tag :np_point, "どちらでもない" %>
+  <%= radio_button_tag :np_point, 1 %>
+  <%= label_tag :np_point, "はい" %>
+  <%= radio_button_tag :np_point, 2 %>
+
+  <%= @a_questions.sample %>
+  <%= label_tag :a_point, "いいえ" %>
+  <%= radio_button_tag :a_point, 0 %>
+  <%= label_tag :a_point, "どちらでもない" %>
+  <%= radio_button_tag :a_point, 1 %>
+  <%= label_tag :a_point, "はい" %>
+  <%= radio_button_tag :a_point, 2 %>
+
+  <%= @fc_questions.sample %>
+  <%= label_tag :fc_point, "いいえ" %>
+  <%= radio_button_tag :fc_point, 0 %>
+  <%= label_tag :fc_point, "どちらでもない" %>
+  <%= radio_button_tag :fc_point, 1 %>
+  <%= label_tag :fc_point, "はい" %>
+  <%= radio_button_tag :fc_point, 2 %>
+
+  <%= @ac_questions.sample %>
+  <%= label_tag :ac_point, "いいえ" %>
+  <%= radio_button_tag :ac_point, 0 %>
+  <%= label_tag :ac_point, "どちらでもない" %>
+  <%= radio_button_tag :ac_point, 1 %>
+  <%= label_tag :ac_point, "はい" %>
+  <%= radio_button_tag :ac_point, 2 %>
+
+
+  <%#= radio_button_tag :cp_point, "いいえ", {value: 0, style: "display: inline-block;"} %>
+  <%#= radio_button_tag :point, 1 %>
+  <%#= radio_button_tag :cp_point, "どちらでもない", {value: 1, style: "display: inline-block;"} %>
+  <%#= radio_button_tag :point, 2 %>
+  <%#= radio_button_tag :cp_point, "はい", {value: 2, style: "display: inline-block;"} %>
+
+
+   <!--評価された人のIDが必要だからhidden_fieldでURLから取ってきてる。-->
+   <%#= f.hidden_field_tag :evaluated_user_id, value: params[:id] %>
+   <%#= f.submit 'Create Book' %>
+   <%= hidden_field_tag 'evaluated_user_id', @user.id %>
+   <%= submit_tag 'Create Book' %>
+<% end %>
+<%= line_chart @chart_data, curve: false %>
+
+
+<!--{cp_poin: 1, np_point: 0, xx_point: 5}-->
+
+
+
+<!--@cp_point = CpPoint.new-->
+<!--@cp_point.point = params[:cp_point]-->
+<!--@cp_point.save-->
+
+<!--@np_point = NpPoint.new-->
+<!--@np_point.point = params[:np_point]-->
+<!--@np_point.save-->
+
+
+

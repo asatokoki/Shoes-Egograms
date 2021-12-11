@@ -9,6 +9,33 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <header>
+    <!--もしサインインしてたらヘッダーに下記の内容を表示する-->
+    <% if user_signed_in? %>
+      <h1 class="logo"><%= link_to "Logo", root_path %></h1>
+      <nav class="nav">
+        <ul class="menu-group">
+          <li class="menu-item"><a href="#">about</a></li>
+          <li class="menu-item"><%= link_to"靴一覧", users_path %></li>
+          <li class="menu-item"><%= link_to"エゴグラム一覧", egograms_path %></li>
+          <li class="menu-item"><%= link_to"マイページ", users_path %></li>
+          <li class="menu-item"><%= link_to"ログアウト", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </nav>
+    <% else %>
+    <!--ログインしてないとき-->
+      <h1 class="title"><%= link_to "Logo", root_path %></h1>
+      <nav class="nav">
+        <ul class="menu-group">
+          <li class="menu-item"><a href="#">about</a></li>
+          <li class="menu-item"><%= link_to"靴一覧", users_path %></li>
+          <li class="menu-item"><%= link_to"エゴグラム一覧", egograms_path %></li>
+          <li class="menu-item"><%= link_to "新規登録", new_user_registration_path %></li>
+          <li class="menu-item"><%= link_to "ログイン", new_user_session_path %></li>
+        </ul>
+      </nav>
+    <% end %>
+  </header>
   <body>
     <%= yield %>
   </body>

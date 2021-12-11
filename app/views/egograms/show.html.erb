@@ -1,0 +1,16 @@
+  <%= attachment_image_tag @egogram, :egogram_image, size: "300x300" %>
+
+
+  <p><%= @egogram.type_name %></p>
+  <h3>長所</h3>
+  <p><%= @egogram.strong_point_title %></p>
+  <h3>長所説明</h3>
+  <p><%= @egogram.strong_point_body %></p>
+  <h3>短所</h3>
+  <p><%= @egogram.weak_point_title %></p>
+  <h3>短所説明</h3>
+  <p><%= @egogram.weak_point_body %></p>
+  <h3>アドバイス</h3>
+  <p><%= @egogram.advice_title %></p>
+  <h3>アドバイス説明</h3>
+  <p><%= @egogram.advice_body %></p>
