@@ -29,3 +29,4 @@ Product.create(name:'ボトムス', size:'M', status:'やや傷や汚れあり',
 Product.create(name:'ボトムス', size:'M', status:'やや傷や汚れあり', price:'1500')
 Product.create(name:'ボトムス', size:'S', status:'全体的に状態が悪い', price:'800')
 Product.create(name:'ボトムス', size:'S', status:'全体的に状態が悪い', price:'1000')
+
