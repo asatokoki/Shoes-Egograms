@@ -1,5 +1,8 @@
-<%= form_with model: @egogram, local:true do |f| %>
+
+<%= form_with model: @egogram, url: admins_egograms_path, local:true do |f| %>
+
   <h4>タイプの名前</h4>
+  <%# binding.pry %>
   <%= f.text_field :type_name %>
 
   <h4>長所タイトル</h4>

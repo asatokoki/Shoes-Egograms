@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   namespace :admins do
     resources :users
     resources :egograms
-    # resources :order_detail, only: [:update]
 
   end
 
@@ -19,7 +18,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :points, only: [:create, :new, :update]
-  resources :egograms
+  resources :egograms, only: [:index, :show]
   #form_tagでコントローラーで保存してるから不要
   #resources :cp_points, only: [:create, :new, :update]
   #resources :np_points, only: [:create, :new, :update]
