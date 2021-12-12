@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       @values = []
       # 各ポイントテーブルのポイント合計を取得してレコードがあれば値をいれる。なければ０を入れる。
       # .group（評価されるユーザーごとに集計したい）
-      
+
       if model.group(:evaluated_user_id).where(evaluated_user_id: @user.id).select("sum(point) as point").length > 0
         @values = [model.to_s, model.group(:evaluated_user_id).where(evaluated_user_id: @user.id).select("sum(point) as point")[0][:point]]
       else
@@ -35,14 +35,27 @@ class UsersController < ApplicationController
     #  ["FcPoint", 13],
     #  ["AcPoint", 12],
     # ]
+  end
 
+  def my_page
+    @user = current_user
+    @chart_data = []
+    [CpPoint, NpPoint, APoint, FcPoint, AcPoint].each do |model|
+      @values = []
+      # 各ポイントテーブルのポイント合計を取得してレコードがあれば値をいれる。なければ０を入れる。
+      # .group（評価されるユーザーごとに集計したい）
 
+      if model.group(:evaluated_user_id).where(evaluated_user_id: @user.id).select("sum(point) as point").length > 0
+        @values = [model.to_s, model.group(:evaluated_user_id).where(evaluated_user_id: @user.id).select("sum(point) as point")[0][:point]]
+      else
+        @values = [model.to_s, 0]
+      end
+      @chart_data.push(@values)
+    end
   end
 
   def update
-    @user = User.find(params[:id])
-    @cp_point.update(cp_point_params)
-    redirect_to  user_path(current_user)
+
   end
 
 

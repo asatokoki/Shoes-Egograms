@@ -83,9 +83,9 @@
    <%= hidden_field_tag 'evaluated_user_id', @user.id %>
    <%= submit_tag 'Create Book' %>
 <% end %>
-<%= line_chart @chart_data, curve: false %>
 
-
+<%= line_chart @chart_data, width: "500px", height: "500px", curve: false %>
+<%# コメントアウト練習 %>
 <!--{cp_poin: 1, np_point: 0, xx_point: 5}-->
 
 
