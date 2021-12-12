@@ -29,6 +29,5 @@ Rails.application.routes.draw do
   #resources :a_points, only: [:create, :new, :update]
   #resources :fc_points, only: [:create, :new, :update]
   #resources :ac_points, only: [:create, :new, :update]
-  resources :products
 
 end
