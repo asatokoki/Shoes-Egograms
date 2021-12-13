@@ -9,5 +9,5 @@
     趣味は<%= @user.hobbies %>で<br>
     <%= @user.hobbies_details %>です。
 </p>
-
+<%= link_to "user_deit", users_edit_path %>
 <%= line_chart @chart_data, width: "500px", height: "500px", curve: false, colors: ["#8b4513", "#8b4513"] %>

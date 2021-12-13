@@ -16,10 +16,11 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   # 下のresources :usersを先に記述していたらそこを、優先的に読み込んでしまう
   get 'users/my_page/' => 'users#my_page'
-
+  get 'users/edit' => 'users#edit'
   devise_for :users
 
-  resources :users
+  resources :users, only: [:update, :index, :show]
+
 
   resources :points, only: [:create, :new, :update]
   resources :egograms, only: [:index, :show]

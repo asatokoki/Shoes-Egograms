@@ -54,9 +54,19 @@ class UsersController < ApplicationController
     end
   end
 
-  def update
-
+  def edit
+    @user = current_user
   end
 
+  def update
+      @user = User.find(params[:id])
+      @user.update(user_params)
+      redirect_to users_my_page_path
+  end
+  
+  private
+    def user_params
+      params.require(:user).permit(:name, :age, :gender, :profile_image, :job, :job_details, :annual_income, :hobbies, :hobbies_details)
+    end
 
 end
