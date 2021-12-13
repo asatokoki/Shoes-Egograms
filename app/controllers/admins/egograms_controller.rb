@@ -16,7 +16,17 @@ class Admins::EgogramsController < ApplicationController
   def show
     @egogram = Egogram.find(params[:id])
   end
-
+  
+  def edit
+    @egogram = Egogram.find(params[:id])
+  end
+  
+  def update
+    @egogram = Egogram.find(params[:id])
+    @egogram.update(egogram_params)
+    redirect_to admins_egogram_path
+  end
+  
   private
 
   def egogram_params

@@ -1,0 +1,28 @@
+<%#= form_with model:@egogram local:true do |f| %>
+<%= form_with model: [:admins, @egogram], local:true do |f| %>
+
+<h4>タイプの名前</h4>
+  <%# binding.pry %>
+  <%= f.text_field :type_name %>
+
+  <h4>長所タイトル</h4>
+  <%= f.text_field :strong_point_title %>
+
+  <h4>長所本文</h4>
+  <%= f.text_area :strong_point_body %>
+
+  <h4>短所タイトル</h4>
+  <%= f.text_field :weak_point_title %>
+
+  <h4>短所本文</h4>
+  <%= f.text_area :weak_point_body %>
+
+  <h4>アドバイスタイトル</h4>
+  <%= f.text_field :advice_title %>
+
+  <h4>アドバイス本文</h4>
+  <%= f.text_area :advice_body %>
+
+  <%= f.attachment_field :egogram_image %>
+  <%= f.submit 'Create Book' %>
+<% end %>
