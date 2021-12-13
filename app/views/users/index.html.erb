@@ -1,8 +1,10 @@
-<h1>靴のインデックス</h1>
 
-<% @users.each do |user| %>
- <%#= attachment_image_tag user, :profile_image, format: 'jpeg', size: '100x100' %>
- <%= link_to user_path(user) do %>
-  <%= attachment_image_tag user, :profile_image,  size: "100x100" %>
- <% end %>
-<% end %>
+<div class="main">
+ <div class="shose">
+  <% @users.each do |user| %>
+   <%= link_to user_path(user) do %>
+    <%= attachment_image_tag user, :profile_image,  size: "300x300" %>
+   <% end %>
+  <% end %>
+ </div>
+</div>
