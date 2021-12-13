@@ -1,7 +1,7 @@
 <div class="main">
-  <div class="contents">
+  <div class="introduction">
     <%= attachment_image_tag @user, :profile_image,  size: "300x300" %>
-  
+
     <p>私の名前は<%= @user.name %>です。<br>
         年齢<%= @user.age %>歳です。<br>
         性別は<%= @user.gender %>です<br>
@@ -16,7 +16,7 @@
       <%= form_tag "/points", method: :post do %>
         <!--users_controlleの配列でまとめてるところからランダムでcpの質問を出す-->
         <div class="question">
-          <%= @cp_questions.sample %>
+          "<%= @cp_questions.sample %>"<br>
           <%= label_tag :cp_point, "いいえ" %>
           <%= radio_button_tag :cp_point, 0 %>
           <%= label_tag :cp_point, "どちらでもない" %>
@@ -24,9 +24,9 @@
           <%= label_tag :cp_point, "はい" %>
           <%= radio_button_tag :cp_point, 2 %>
         </div>
-        
+
         <div class="question">
-          <%= @np_questions.sample %>
+          "<%= @np_questions.sample %>"<br>
           <%= label_tag :np_point, "いいえ" %>
           <%= radio_button_tag :np_point, 0 %>
           <%= label_tag :np_point, "どちらでもない" %>
@@ -34,9 +34,9 @@
           <%= label_tag :np_point, "はい" %>
           <%= radio_button_tag :np_point, 2 %>
         </div>
-        
+
         <div class="question">
-          <%= @a_questions.sample %>
+          "<%= @a_questions.sample %>"<br>
           <%= label_tag :a_point, "いいえ" %>
           <%= radio_button_tag :a_point, 0 %>
           <%= label_tag :a_point, "どちらでもない" %>
@@ -44,9 +44,9 @@
           <%= label_tag :a_point, "はい" %>
           <%= radio_button_tag :a_point, 2 %>
         </div>
-        
+
         <div class="question">
-          <%= @fc_questions.sample %>
+          "<%= @fc_questions.sample %>"<br>
           <%= label_tag :fc_point, "いいえ" %>
           <%= radio_button_tag :fc_point, 0 %>
           <%= label_tag :fc_point, "どちらでもない" %>
@@ -54,9 +54,9 @@
           <%= label_tag :fc_point, "はい" %>
           <%= radio_button_tag :fc_point, 2 %>
         </div>
-        
+
         <div class="question">
-          <%= @ac_questions.sample %>
+          "<%= @ac_questions.sample %>"<br>
           <%= label_tag :ac_point, "いいえ" %>
           <%= radio_button_tag :ac_point, 0 %>
           <%= label_tag :ac_point, "どちらでもない" %>
@@ -64,32 +64,32 @@
           <%= label_tag :ac_point, "はい" %>
           <%= radio_button_tag :ac_point, 2 %>
         </div>
-    
+
         <%#= radio_button_tag :cp_point, "いいえ", {value: 0, style: "display: inline-block;"} %>
         <%#= radio_button_tag :point, 1 %>
         <%#= radio_button_tag :cp_point, "どちらでもない", {value: 1, style: "display: inline-block;"} %>
         <%#= radio_button_tag :point, 2 %>
         <%#= radio_button_tag :cp_point, "はい", {value: 2, style: "display: inline-block;"} %>
-    
-    
+
+
          <!--評価された人のIDが必要だからhidden_fieldでURLから取ってきてる。-->
          <%#= f.hidden_field_tag :evaluated_user_id, value: params[:id] %>
          <%#= f.submit 'Create Book' %>
          <%= hidden_field_tag 'evaluated_user_id', @user.id %>
-         <%= submit_tag 'Create Book' %>
+           <%= submit_tag '回答する', class: 'btn submit' %>
       <% end %>
     </div>
-  
-    <%= line_chart @chart_data, width: "500px", height: "500px", curve: false, colors: ["#8b4513", "#8b4513"] %>
+    <div class="graph">
+      <%= line_chart @chart_data, width: "500px", height: "500px", curve: false, colors: ["#8b4513", "#8b4513"] %>
     <%# コメントアウト練習 %>
     <!--{cp_poin: 1, np_point: 0, xx_point: 5}-->
-  
-  
-  
+    </div>
+
+
     <!--@cp_point = CpPoint.new-->
     <!--@cp_point.point = params[:cp_point]-->
     <!--@cp_point.save-->
-  
+
     <!--@np_point = NpPoint.new-->
     <!--@np_point.point = params[:np_point]-->
     <!--@np_point.save-->

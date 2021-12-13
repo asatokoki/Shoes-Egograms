@@ -52,7 +52,7 @@ p {
   margin: 0 auto;
   margin-top: 100px;
 }
-.contents{
+.introduction{
   text-align: center;
 }
 .shose{
@@ -61,5 +61,32 @@ p {
 
 .question{
   text-align: center;
-  
+
+}
+.graph{
+  text-align: center;
+  width: 500px;
+}
+canvas{
+  text-align: center;
+}
+
+.submit{
+  background-color: #83725F;
+  color: white;
+
+}
+.btn{
+  box-shadow: 0 10px #4d3f36;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.btn:active{
+  box-shadow: none;
+  position: relative;
+  top: 7px;
 }
