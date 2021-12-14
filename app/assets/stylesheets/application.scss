@@ -52,6 +52,26 @@ p {
   margin: 0 auto;
   margin-top: 100px;
 }
+
+.top-image{
+  background-image: url("スクリーンショット 2021-12-04 15.52.19.png");
+  background-position: 0px 10px;
+  background-size: cover;
+  opacity: 0.5;
+  margin: 0 auto;
+  height: 1000px;
+  position: fixed;
+  z-index: -1;/*最背面に設定*/
+  top: 0;
+  right:0;
+  left:0;
+  bottom:0;
+}
+.top-sign-up{
+  text-align: center;
+  margin-top: 500px;
+}
+
 .introduction{
   text-align: center;
 }
@@ -75,8 +95,18 @@ canvas{
   background-color: #83725F;
   color: white;
 
+.topbtn{
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+
 }
 .btn{
+  color: white;
+
+  background-color: #83725F;
   box-shadow: 0 10px #4d3f36;
   opacity: 0.9;
 }
