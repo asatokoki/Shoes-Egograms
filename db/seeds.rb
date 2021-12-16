@@ -30,3 +30,4 @@ Product.create(name:'ボトムス', size:'M', status:'やや傷や汚れあり',
 Product.create(name:'ボトムス', size:'S', status:'全体的に状態が悪い', price:'800')
 Product.create(name:'ボトムス', size:'S', status:'全体的に状態が悪い', price:'1000')
 
+Admin.create(email: ENV['ADMIN_EMAIL'] , password: ENV['ADMIN_PASSWORD'])
