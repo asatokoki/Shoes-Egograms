@@ -19,7 +19,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { in: 1..15 }
   validates :age, numericality: { only_integer: true }
   validates :gender, inclusion: { in: %w(男 女 その他),
-  message: "%{value} のサイズは無効です" }
+  message: "%{value} は無効です" }
   validates :profile_image, presence: true
   validates :job, presence: true
   validates :job_details, presence: true
@@ -29,7 +29,7 @@ class User < ApplicationRecord
 
 
 
-  
+
 
 
 end

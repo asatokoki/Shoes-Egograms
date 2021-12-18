@@ -5,9 +5,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
-    #↓これはform_withの時にモデルに送るためにインスタンス変数を用意してた
-    #@cp_point = CpPoint.new
+    @anserData = CpPoint.find_by(evaluated_user_id: params[:id], answerer_id: current_user.id)
+    # if !anserData.nil?
+    #   @evaluated_user_id = anserData.answerer_id
+    # else
+    #   @evaluated_user_id = 0
+    # end
 
     @cp_questions = ["何事もきちっとしなければ気が済まない","人が間違ったことをしたときは、なかなか許せない","責任感が強い","自分の考えは譲らず、最後まで通す","礼儀作法の厳しいしつけを受けた","小さな不正でも、うやむやにしない","権利を主張する前に義務を果たす","「…ねばならない」「…すべきだ」という言い方をよくする","規則は守る方で、時間やお金にはルーズなことは嫌いだ","子どもや部下は厳し教育する"]
     @np_questions = ["道を聞かれたら親切に教えてあげる", "相手の話に耳を傾け、共感することがある", "他人の世話をすることが好きだ", "人の悪いところよりも、いいところを見るようにする", "ガッカリしているしている人がいたら、慰めたり元気つけてあげる", "融通が効く方だと思う", "人から何か頼まれたらイヤとは言えない", "誰かが失敗した時、責めないで許してあげる", "社会奉仕的な仕事に参加することが好きだ", "義理と人情を重視する"]
@@ -63,7 +66,7 @@ class UsersController < ApplicationController
       @user.update(user_params)
       redirect_to users_my_page_path
   end
-  
+
   private
     def user_params
       params.require(:user).permit(:name, :age, :gender, :profile_image, :job, :job_details, :annual_income, :hobbies, :hobbies_details)
