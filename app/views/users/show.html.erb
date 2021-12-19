@@ -17,11 +17,12 @@
     </p>
 
     <div class="graph">
-      <%= line_chart @chart_data, width: "500px", height: "500px", curve: false, colors: ["#8b4513", "#8b4513"] %>
+      <%= line_chart @chart_data, width: "300px", height: "300px", curve: false, colors: ["#8b4513", "#8b4513"] %>
     <%# コメントアウト練習 %>
     <!--{cp_poin: 1, np_point: 0, xx_point: 5}-->
     </div>
   </div>
+</div>
 <% elsif user_signed_in? %>
   <div class="introduction">
     <%= attachment_image_tag @user, :profile_image,  size: "300x300" %>
@@ -91,15 +92,16 @@
 
          <!--評価された人のIDが必要だからhidden_fieldでURLから取ってきてる。-->
          <%#= f.hidden_field_tag :evaluated_user_id, value: params[:id] %>
-         <%#= f.submit 'Create Book' %>
          <%= hidden_field_tag 'evaluated_user_id', @user.id %>
          <%= submit_tag '回答する', class: 'btn submit' %>
     <% end %>
   </div>
 <% else %>
-  <div class="introduction">
-    <%= attachment_image_tag @user, :profile_image,  size: "300x300" %>
-
+  <div class="main">
+    <div class="introduction">
+      <%= attachment_image_tag @user, :profile_image,  size: "300x300" %>
+      <h2>この靴の持ち主の性格を知るにはログインして<br>
+      この靴を見て５問の質問に答えてください</h2>
     </div>
   </div>
 <% end %>

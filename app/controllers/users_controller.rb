@@ -5,7 +5,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @anserData = CpPoint.find_by(evaluated_user_id: params[:id], answerer_id: current_user.id)
+    if user_signed_in?
+      @anserData = CpPoint.find_by(evaluated_user_id: params[:id], answerer_id: current_user.id)
+    else
+      @anserData = nil
+    end
     # if !anserData.nil?
     #   @evaluated_user_id = anserData.answerer_id
     # else

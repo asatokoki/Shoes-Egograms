@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ $primary: #fd7e14;
+ 
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
@@ -29,7 +31,7 @@ header {
   height: 100px;
   background-color: #83725F;
   align-items: center;
-  color: pink;
+  color: white;
 }
 
 p {
@@ -87,6 +89,11 @@ p {
 .introduction{
   text-align: center;
 }
+
+.introduction h2{
+  margin: 100px;
+  color: #83725F;
+}
 .shose{
 
 }
@@ -97,7 +104,8 @@ p {
 }
 .graph{
   text-align: center;
-  width: 500px;
+  width: 300px;
+  
 }
 canvas{
   text-align: center;
@@ -131,4 +139,13 @@ canvas{
   box-shadow: none;
   position: relative;
   top: 7px;
+}
+
+footer{
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  background-color: #83725F;
+  align-items: center;
+  color: white;
 }

@@ -1,3 +1,6 @@
 class AcPoint < ApplicationRecord
   belongs_to :user, foreign_key: "answerer_id"#, as: "Answer"
+  # validates :point, numericality: { in: 0..2 }
+    validates :apoint, presence: true
+
 end
