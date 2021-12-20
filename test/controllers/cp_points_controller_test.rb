@@ -5,5 +5,4 @@ class CpPointsControllerTest < ActionDispatch::IntegrationTest
     get cp_points_create_url
     assert_response :success
   end
-
 end

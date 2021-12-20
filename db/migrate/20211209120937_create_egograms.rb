@@ -1,7 +1,6 @@
 class CreateEgograms < ActiveRecord::Migration[5.2]
   def change
     create_table :egograms do |t|
-
       t.string :type_name
       t.string :strong_point_title
       t.text :strong_point_body

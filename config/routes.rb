@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   scope module: :admin do
     devise_for :admins, skip: [:registrations, :passwords], controllers: {
-      sessions: "admins/sessions"
+      sessions: "admins/sessions",
     }
   end
-
 
   namespace :admins do
     resources :users
@@ -20,14 +19,12 @@ Rails.application.routes.draw do
 
   resources :users, only: [:update, :index, :show]
 
-
   resources :points, only: [:create, :new, :update]
   resources :egograms, only: [:index, :show]
-  #form_tagでコントローラーで保存してるから不要
-  #resources :cp_points, only: [:create, :new, :update]
-  #resources :np_points, only: [:create, :new, :update]
-  #resources :a_points, only: [:create, :new, :update]
-  #resources :fc_points, only: [:create, :new, :update]
-  #resources :ac_points, only: [:create, :new, :update]
-
+  # form_tagでコントローラーで保存してるから不要
+  # resources :cp_points, only: [:create, :new, :update]
+  # resources :np_points, only: [:create, :new, :update]
+  # resources :a_points, only: [:create, :new, :update]
+  # resources :fc_points, only: [:create, :new, :update]
+  # resources :ac_points, only: [:create, :new, :update]
 end

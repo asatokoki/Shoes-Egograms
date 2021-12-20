@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     #   @evaluated_user_id = 0
     # end
 
-    @cp_questions = ["何事もきちっとしなければ気が済まない","人が間違ったことをしたときは、なかなか許せない","責任感が強い","自分の考えは譲らず、最後まで通す","礼儀作法の厳しいしつけを受けた","小さな不正でも、うやむやにしない","権利を主張する前に義務を果たす","「…ねばならない」「…すべきだ」という言い方をよくする","規則は守る方で、時間やお金にはルーズなことは嫌いだ","子どもや部下は厳し教育する"]
+    @cp_questions = ["何事もきちっとしなければ気が済まない", "人が間違ったことをしたときは、なかなか許せない", "責任感が強い", "自分の考えは譲らず、最後まで通す", "礼儀作法の厳しいしつけを受けた", "小さな不正でも、うやむやにしない", "権利を主張する前に義務を果たす", "「…ねばならない」「…すべきだ」という言い方をよくする", "規則は守る方で、時間やお金にはルーズなことは嫌いだ", "子どもや部下は厳し教育する"]
     @np_questions = ["道を聞かれたら親切に教えてあげる", "相手の話に耳を傾け、共感することがある", "他人の世話をすることが好きだ", "人の悪いところよりも、いいところを見るようにする", "ガッカリしているしている人がいたら、慰めたり元気つけてあげる", "融通が効く方だと思う", "人から何か頼まれたらイヤとは言えない", "誰かが失敗した時、責めないで許してあげる", "社会奉仕的な仕事に参加することが好きだ", "義理と人情を重視する"]
     @a_questions = ["人の意見は賛否両論を聞いて参考にする", "何かうまくいかない時でもあまりカッとならない", "何か決める時、いろんな人の意見を聞いて参考にする", "初めて何かするときは、よく調べてからする", "何かするとき、自分にとって得か損かをよく考える", "何か分からないことがあると、人に聞いたり相談する", "体調不良のときは、自重して無理しないようにする", "両親や友人、上司などと冷静によく話し合うことがある", "能率的にテキパキと仕事を片付ける", "情緒的というよりむしろ論理的だ"]
     @fc_questions = ["おしゃれが好きだ", "みんなと騒いだりはしゃいだりして遊ぶのが好きだ", "言いたいことを遠慮なく言う", "嬉しいときや悲しいときは、表情や動作に表す", "欲しいものは、手に入れないと気が済まない", "異性に自由に話しかけることができる", "人に冗談を言ったりからかったりするのが好きだ", "スポーツやダンス、歌を歌ったりするのが好きだ", "直感で判断することが多い", "好奇心が強い"]
@@ -66,14 +66,14 @@ class UsersController < ApplicationController
   end
 
   def update
-      @user = User.find(params[:id])
-      @user.update(user_params)
-      redirect_to users_my_page_path
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to users_my_page_path
   end
 
   private
-    def user_params
-      params.require(:user).permit(:name, :age, :gender, :profile_image, :job, :job_details, :annual_income, :hobbies, :hobbies_details)
-    end
 
+  def user_params
+    params.require(:user).permit(:name, :age, :gender, :profile_image, :job, :job_details, :annual_income, :hobbies, :hobbies_details)
+  end
 end

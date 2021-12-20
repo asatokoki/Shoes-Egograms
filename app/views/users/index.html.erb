@@ -1,19 +1,16 @@
 <div class="container">
 
- <div class="row">
-
- <div class="col-12 text-center">
-          <% @users.each do |user| %>
-
-            <%= link_to user_path(user) do %>
-              <%= attachment_image_tag user, :profile_image,  size: "300x300", class: 'p-3 radius-imgae' %>
-            <% end %>
-          <% end %>
-        </div>
-  </div>
   <div class="row">
-   <div class="col-12 text-center">
-            <%= paginate @users %>
-            </div>
+
+    <div class="col-12 text-center">
+      <% @users.each do |user| %>
+        <%= link_to user_path(user) do %>
+          <%= attachment_image_tag user, :profile_image,  size: "300x300", class: 'p-3 radius-imgae' %>
+        <% end %>
+      <% end %>
+      <%= paginate @users %>
+    </div>
   </div>
+
+
 </div>

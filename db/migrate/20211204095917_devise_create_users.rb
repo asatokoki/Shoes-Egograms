@@ -38,7 +38,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # 性別
       t.string :gender
       # プロフィール画像
-      t.string :profile_image_id 
+      t.string :profile_image_id
       # 仕事
       t.string :job
       # 仕事詳細

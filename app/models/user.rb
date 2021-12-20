@@ -18,18 +18,14 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { in: 1..15 }
   validates :age, numericality: { only_integer: true }
-  validates :gender, inclusion: { in: %w(男 女 その他),
-  message: "%{value} は無効です" }
+  validates :gender, inclusion: {
+    in: %w(男 女 その他),
+    message: "%{value} は無効です",
+  }
   validates :profile_image, presence: true
   validates :job, presence: true
   validates :job_details, presence: true
   validates :annual_income, format: { with: /\A[0-9]+\z/ }
   validates :hobbies, presence: true
   validates :hobbies_details, presence: true
-
-
-
-
-
-
 end

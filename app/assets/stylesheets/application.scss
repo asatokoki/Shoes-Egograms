@@ -92,10 +92,12 @@
   border-radius: 50%;
 }
 
+.graph {
+    display:inline-block;
+}
 
-
-.introduction{
-  text-align: center;
+.question{
+  display: inline;
 }
 
 .introduction h2{
@@ -122,6 +124,7 @@ canvas{
 .submit{
   background-color: #83725F;
   color: white;
+}
 
 .topbtn{
   width: 100px;
@@ -130,7 +133,7 @@ canvas{
 }
 
 
-}
+
 .btn{
   color: white;
 
