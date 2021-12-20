@@ -1,13 +1,32 @@
-<%= attachment_image_tag @user, :profile_image,  size: "100x100" %>
-
-<p>私の名前は<%= @user.name %>です。<br>
-    年齢<%= @user.age %>歳です。<br>
-    性別は<%= @user.gender %>です<br>
-    職業は <%= @user.job %>で<br>
-    <%= @user.job_details %>しています<br>
-    年収は<%= @user.annual_income %>万円です。<br>
-    趣味は<%= @user.hobbies %>で<br>
-    <%= @user.hobbies_details %>です。
-</p>
-<%= link_to "user_deit", users_edit_path %>
-<%= line_chart @chart_data, width: "500px", height: "500px", curve: false, colors: ["#8b4513", "#8b4513"] %>
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center pt-3	">
+      <%= attachment_image_tag @user, :profile_image,  size: "300x300" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center pt-3	">
+      <p>私の名前は<%= @user.name %>です。<br>
+          年齢<%= @user.age %>歳です。<br>
+          性別は<%= @user.gender %>です<br>
+          職業は <%= @user.job %>で<br>
+          <%= @user.job_details %>しています<br>
+          年収は<%= @user.annual_income %>万円です。<br>
+          趣味は<%= @user.hobbies %>で<br>
+          <%= @user.hobbies_details %>です。
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center pt-3	">
+    <%= link_to "user_deit", users_edit_path, class: 'btn submit' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center pt-3	">
+      <div class="graph">
+        <%= line_chart @chart_data, width: "300px", height: "300px", curve: false, colors: ["#8b4513", "#8b4513"] %>
+      </div>
+    </div>
+  </div>
+</div>
