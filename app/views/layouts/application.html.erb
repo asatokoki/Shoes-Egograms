@@ -11,46 +11,55 @@
 
   <header>
     <% if admin_signed_in? %>
-    <h1 class="logo"><%= link_to "Logo", root_path %></h1>
-      <nav class="nav">
-        <ul class="menu-group">
-          <li class="menu-item">管理者でログイン中</li>
-          <li class="menu-item"><%= link_to"ユーザー一覧", admins_users_path %></li>
-          <li class="menu-item"><%= link_to"エゴグラム一覧", admins_egograms_path %></li>
-          <li class="menu-item"><%= link_to"ログアウト", destroy_user_session_path, method: :delete %></li>
-        </ul>
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+          <span class="navbar-brand"><%= link_to image_tag("pf_logo.png", class: "image", size: "400x100"), root_path %></span>
+          <div class="collapse navbar-collapse show" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <span class="nav-link"><%= link_to"ユーザー一覧", admins_users_path, class: "text-white" %></span>
+              <span class="nav-link"><%= link_to"エゴグラム一覧", admins_egograms_path, class: "text-white" %></span>
+              <span class="nav-link"><%= link_to"ログアウト", destroy_user_session_path, method: :delete, class: "text-white" %></span>
+            </div>
+          </div>
+        </div>
       </nav>
 
     <% elsif user_signed_in? %>
-      <h1 class="logo"><%= link_to "Logo", root_path %></h1>
-      <nav class="nav">
-        <ul class="menu-group">
-          <li class="menu-item">ようこそ<%= current_user.name %>さん！</li>
-          <li class="menu-item"><a href="#">about</a></li>
-          <li class="menu-item"><%= link_to"靴一覧", users_path %></li>
-          <li class="menu-item"><%= link_to"エゴグラム一覧", egograms_path %></li>
-          <li class="menu-item"><%= link_to"マイページ",  users_my_page_path %></li>
-          <li class="menu-item"><%= link_to"ログアウト", destroy_user_session_path, method: :delete %></li>
-        </ul>
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+          <span class="navbar-brand"><%= link_to image_tag("pf_logo.png", class: "image", size: "400x100"), root_path %></span>
+          <div class="collapse navbar-collapse show" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <span class="nav-link"><%= link_to"靴一覧", users_path, class: "text-white" %></span>
+              <span class="nav-link"><%= link_to"エゴグラム一覧", egograms_path, class: "text-white" %></span>
+              <span class="nav-link"><%= link_to"マイページ",  users_my_page_path, class: "text-white" %></span>
+              <span class="nav-link"><%= link_to"ログアウト", destroy_user_session_path, method: :delete, class: "text-white" %></span>
+            </div>
+          </div>
+        </div>
       </nav>
+
     <% else %>
     <!--ログインしてないとき-->
-      <h1 class="title"><%= link_to "Logo", root_path %></h1>
-      <nav class="nav">
-        <ul class="menu-group">
-          <li class="menu-item"><a href="#">about</a></li>
-          <li class="menu-item"><%= link_to"靴一覧", users_path %></li>
-          <li class="menu-item"><%= link_to"エゴグラム一覧", egograms_path %></li>
-          <li class="menu-item"><%= link_to "新規登録", new_user_registration_path %></li>
-          <li class="menu-item"><%= link_to "ログイン", new_user_session_path %></li>
-        </ul>
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+          <span class="navbar-brand"><%= link_to image_tag("pf_logo.png", class: "image", size: "400x100"), root_path %></span>
+          <div class="collapse navbar-collapse show" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <span class="nav-link"><%= link_to"靴一覧", users_path, class: "text-white" %></span>
+              <span class="nav-link"><%= link_to"エゴグラム一覧", egograms_path, class: "text-white" %></span>
+              <span class="nav-link"><%= link_to "新規登録", new_user_registration_path, class: "text-white" %></span>
+              <span class="nav-link"><%= link_to "ログイン", new_user_session_path, class: "text-white" %></span>
+            </div>
+          </div>
+        </div>
       </nav>
     <% end %>
   </header>
   <body>
     <%= yield %>
   </body>
-  <footer>
-    <h2>©shoes_egogram️</h2>
-  </footer>
+  <div class="text-center p-3 bg-primary text-white ">
+    ©shoes_egogram
+  </div>
 </html>

@@ -1,38 +1,41 @@
-
-<%= form_with model: @egogram, url: admins_egograms_path, local:true do |f| %>
-
-  <h4>タイプの名前</h4>
-  <%# binding.pry %>
-  <%= f.text_field :type_name %>
-
-  <h4>長所タイトル</h4>
-  <%= f.text_field :strong_point_title %>
-
-  <h4>長所本文</h4>
-  <%= f.text_area :strong_point_body %>
-
-  <h4>短所タイトル</h4>
-  <%= f.text_field :weak_point_title %>
-
-  <h4>短所本文</h4>
-  <%= f.text_area :weak_point_body %>
-
-  <h4>アドバイスタイトル</h4>
-  <%= f.text_field :advice_title %>
-
-  <h4>アドバイス本文</h4>
-  <%= f.text_area :advice_body %>
-
-  <%= f.attachment_field :egogram_image %>
-  <%= f.submit 'Create Book' %>
-<% end %>
-
-
-<% @egograms.each do |egogram| %>
-
-
-<%= link_to admins_egogram_path(egogram.id) do %>
-  <%= attachment_image_tag egogram, :egogram_image, size: "300x300" %>
-<% end %>
-
+<% if admin_signed_in? %>
+  <%= form_with model: @egogram, url: admins_egograms_path, local:true do |f| %>
+  
+    <h4>タイプの名前</h4>
+    <%# binding.pry %>
+    <%= f.text_field :type_name %>
+  
+    <h4>長所タイトル</h4>
+    <%= f.text_field :strong_point_title %>
+  
+    <h4>長所本文</h4>
+    <%= f.text_area :strong_point_body %>
+  
+    <h4>短所タイトル</h4>
+    <%= f.text_field :weak_point_title %>
+  
+    <h4>短所本文</h4>
+    <%= f.text_area :weak_point_body %>
+  
+    <h4>アドバイスタイトル</h4>
+    <%= f.text_field :advice_title %>
+  
+    <h4>アドバイス本文</h4>
+    <%= f.text_area :advice_body %>
+  
+    <%= f.attachment_field :egogram_image %>
+    <%= f.submit 'Create Book' %>
+  <% end %>
+  
+  
+  <% @egograms.each do |egogram| %>
+  
+  
+  <%= link_to admins_egogram_path(egogram.id) do %>
+    <%= attachment_image_tag egogram, :egogram_image, size: "300x300" %>
+  <% end %>
+  
+  <% end %>
+<% else %>
+<h1>このページは存在しません</h1>
 <% end %>

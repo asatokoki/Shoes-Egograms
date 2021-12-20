@@ -13,8 +13,10 @@
  *= require_tree .
  *= require_self
  */
- $primary: #fd7e14;
- 
+ $primary: #83725F;
+
+
+
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
@@ -25,22 +27,8 @@
   box-sizing: border-box;
 }
 
-header {
-  display: flex;
-  width: 100%;
-  height: 100px;
-  background-color: #83725F;
-  align-items: center;
-  color: white;
-}
 
-p {
-  padding: 130px 0px;
-}
 
-.logo {
-  margin-right: auto;
-}
 
 .menu-item {
   list-style: none;
@@ -67,24 +55,44 @@ p {
   padding: 50px 0 ;
 }
 
+.container{
+  min-height: 50vh;
+
+}
+
 .top-image{
   background-image: image-url("2021-12-04_15.52.19.png");
-  background-position: 0px 10px;
-  background-size: cover;
-  opacity: 0.5;
-  margin: 0 auto;
-  height: 1000px;
-  position: fixed;
-  z-index: -1;/*最背面に設定*/
-  top: 0;
-  right:0;
-  left:0;
-  bottom:0;
+    /* background-position: 0px 10px; */
+    background-size: cover;
+    position: relative;
+    opacity: 0.5;
+    height: 50vh;
+    width: 100%;
+    min-height: 100vh;
+    /* position: fixed; */
+    z-index: -1;
 }
 .top-sign-up{
   text-align: center;
-  margin-top: 500px;
+ /* margin-top: 500px;*/
 }
+
+.abso-25 {
+  position: absolute;
+  top: 25%;
+}
+
+
+.abso-50{
+  position: absolute;
+  top: 50%;
+}
+
+.radius-imgae{
+  border-radius: 50%;
+}
+
+
 
 .introduction{
   text-align: center;
@@ -105,7 +113,7 @@ p {
 .graph{
   text-align: center;
   width: 300px;
-  
+
 }
 canvas{
   text-align: center;
@@ -141,11 +149,3 @@ canvas{
   top: 7px;
 }
 
-footer{
-  text-align: center;
-  width: 100%;
-  height: 100px;
-  background-color: #83725F;
-  align-items: center;
-  color: white;
-}
