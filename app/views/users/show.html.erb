@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center pt-3	">
-        <%= attachment_image_tag @user, :profile_image,  size: "300x300" %>
+        <%= attachment_image_tag @user, :profile_image,  size: "250x250" %>
       </div>
     </div>
 
@@ -25,7 +25,7 @@
     <div class="row">
       <div class="col-12 text-center pt-3">
         <div class="graph">
-          <%= line_chart @chart_data, width: "300px", height: "300px", curve: false, colors: ["#8b4513", "#8b4513"] %>
+          <%= line_chart @chart_data, width: "250px", height: "250px", curve: false, colors: ["#8b4513", "#8b4513"] %>
         </div>
       </div>
     </div>
@@ -104,11 +104,17 @@
     </div>
   </div>
 <% else %>
-  <div class="main">
-    <div class="introduction">
-      <%= attachment_image_tag @user, :profile_image,  size: "300x300" %>
-      <h2>この靴の持ち主の性格を知るにはログインして<br>
-      この靴を見て５問の質問に答えてください</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center pt-3	">
+        <%= attachment_image_tag @user, :profile_image,  size: "300x300" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center pt-3	">
+        <h2>この靴の持ち主の性格を知るにはログインして<br>
+        この靴を見て５問の質問に答えてください</h2>
+      </div>
     </div>
   </div>
 <% end %>

@@ -56,8 +56,12 @@
 }
 
 .container{
-  min-height: 50vh;
+  height: 80vh;
+}
 
+
+.footer{
+  height: 9vh;
 }
 
 .top-image{
@@ -70,7 +74,6 @@
     width: 100%;
     min-height: 100vh;
     /* position: fixed; */
-    z-index: -1;
 }
 .top-sign-up{
   text-align: center;

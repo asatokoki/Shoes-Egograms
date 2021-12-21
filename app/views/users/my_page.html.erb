@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 text-center pt-3	">
-      <%= attachment_image_tag @user, :profile_image,  size: "300x300" %>
+      <%= attachment_image_tag @user, :profile_image,  size: "200x200" %>
     </div>
   </div>
   <div class="row">
@@ -25,7 +25,7 @@
   <div class="row">
     <div class="col-12 text-center pt-3	">
       <div class="graph">
-        <%= line_chart @chart_data, width: "300px", height: "300px", curve: false, colors: ["#8b4513", "#8b4513"] %>
+        <%= line_chart @chart_data, width: "250px", height: "250px", curve: false, colors: ["#8b4513", "#8b4513"] %>
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 class EgogramsController < ApplicationController
   def index
-    @egograms = Egogram.all
+    @egograms = Egogram.page(params[:page]).per(9)
     @egogram = Egogram.new
   end
 
