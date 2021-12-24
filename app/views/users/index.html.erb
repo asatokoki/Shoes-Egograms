@@ -3,7 +3,12 @@
     <div class="col-12 text-center">
       <% @users.each do |user| %>
         <%= link_to user_path(user) do %>
+        <% if !CpPoint.find_by(evaluated_user_id: user.id, answerer_id: current_user.id).nil? %>
+          <%= attachment_image_tag user, :profile_image,  size: "250x250", class: 'p-3 radius-imgae bg-primary' %>
+        <% else %>
           <%= attachment_image_tag user, :profile_image,  size: "250x250", class: 'p-3 radius-imgae' %>
+        <% end %>
+
         <% end %>
       <% end %>
       <%= paginate @users %>
