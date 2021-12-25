@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
   def index
     @users = User.page(params[:page]).per(12)
-    
+    #例 artistカラムの値が'ももいろクローバーZ' ではないレコードを取得
+#@discography = Discography.where.not(artist: 'ももいろクローバーZ')
+
+    # @kazu = CpPoint.where.not(point: nil).@users
+
+    #個数
+# @exist = Discography.where(released_date: '2011-03-09').count
   end
 
   def show

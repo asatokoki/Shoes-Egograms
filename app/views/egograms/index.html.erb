@@ -3,7 +3,7 @@
     <div class="col-12 text-center">
       <% @egograms.each do |egogram| %>
         <%= link_to egogram_path(egogram.id) do %>
-          <%= attachment_image_tag egogram, :egogram_image, size: "300x300" %>
+          <%= attachment_image_tag egogram, :egogram_image, size: "250x250" %>
         <% end %>
       <% end %>
       <%= paginate @egograms %>

@@ -56,7 +56,7 @@
 }
 
 .container{
-  height: 80vh;
+  height: 100vh;
 }
 
 
@@ -96,6 +96,8 @@
   border-radius: 50%;
 }
 
+
+
 .graph {
     display:inline-block;
 }
@@ -104,22 +106,28 @@
   display: inline;
 }
 
+.opacity-50{
+  opacity: 0.5;
+}
+
 .introduction h2{
   margin: 100px;
   color: #83725F;
 }
-.shose{
+.aaa{
+  width: 0px;
 
 }
 
-.graph{
-  text-align: center;
-  width: 300px;
+.aaa p{
+  width: 0px;
+  display: inline-block;
+}
 
-}
-canvas{
-  text-align: center;
-}
+
+
+
+
 
 .submit{
   background-color: #83725F;

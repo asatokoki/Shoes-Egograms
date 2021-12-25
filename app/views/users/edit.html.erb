@@ -1,18 +1,30 @@
-<h1>ユーザー編集ページ</h1>
-<%= form_with model:@user, local:true do |f| %>
+<div class="container">
+  <%= form_with model:@user, local:true do |f| %>
+  <div class="row">
+    <div class="col-12 text-center pt-3	">
+      <p>私の名前は<%= f.text_field :name, placeholder: "ニックネーム" %>です。<br>
+      年齢<%= f.text_field :age, placeholder: "半角数字" %>歳です。<br>
+      性別は<%= f.text_field :gender, placeholder: "男or女orその他" %>です<br>
+      職業は <%= f.text_field :job, placeholder: "職業を記入" %>で<br>
+      <%= f.text_field :job_details, placeholder: "さらに詳しく記入" %>しています<br>
+      年収は<%= f.text_field :annual_income, placeholder: "半角数字" %>万円です。<br>
+      趣味は<%= f.text_field :hobbies, placeholder: "趣味を記入" %>で<br>
+      <%= f.text_field :hobbies_details, placeholder: "さらに詳しく記入" %>です。
+      </p>
+    </div>
+  </div>
 
-  <div class="field">
-
-    <p>私の名前は<%= f.text_field :name, placeholder: "ニックネーム" %>です。<br>
-    年齢<%= f.text_field :age, placeholder: "半角数字" %>歳です。<br>
-    性別は<%= f.text_field :gender, placeholder: "男or女orその他" %>です<br>
-    職業は <%= f.text_field :job, placeholder: "職業を記入" %>で<br>
-    <%= f.text_field :job_details, placeholder: "さらに詳しく記入" %>しています<br>
-    年収は<%= f.text_field :annual_income, placeholder: "半角数字" %>万円です。<br>
-    趣味は<%= f.text_field :hobbies, placeholder: "趣味を記入" %>で<br>
-    <%= f.text_field :hobbies_details, placeholder: "さらに詳しく記入" %>です。
-    </p>
-    <%= f.attachment_field :profile_image %>
-    <%= f.submit "変更" %>
+    <div class="row">
+      <div class="col-12 text-center pt-3	">
+        <%= f.attachment_field :profile_image %>
+        <%= f.submit "変更", class: 'btn submit'%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center pt-3	">
+        <p>iPhoneで撮影した写真が反映されない方は<a href="https://koneta.nifty.com/koneta_detail/1141008006174_1.htm">こちら</a>をご確認ください</p>
+      </div>
+    </div>
   </div>
 <% end %>
+</div>
