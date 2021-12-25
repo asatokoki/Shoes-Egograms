@@ -1,14 +1,15 @@
 <% if user_signed_in? %>
   <div class="container">
     <div class="row">
-      <div class="col-12 text-center" style="display:flex;flex-wrap:wrap">
+      <div class="col-12 text-center yoko" style="display:flex;flex-wrap:wrap">
         <% @users.each do |user| %>
           <div class="kakou">
           <%= link_to user_path(user) do %>
             <% if !CpPoint.find_by(evaluated_user_id: user.id, answerer_id: current_user.id).nil? %>
-              <%= attachment_image_tag user, :profile_image,  size: "250x250", class: 'p-3 radius-imgae' %>
+              <%= attachment_image_tag user, :profile_image,  size: "200x200", class: 'p-3 radius-imgae oya' %>
+              <h6>済</h6>
             <% else %>
-              <%= attachment_image_tag user, :profile_image,  size: "250x250", class: 'p-3 radius-imgae opacity-50' %>
+              <%= attachment_image_tag user, :profile_image,  size: "200x200", class: 'p-3 radius-imgae opacity-50' %>
             <% end %>
           <% end %>
 
