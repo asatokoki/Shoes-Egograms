@@ -1,8 +1,8 @@
 <% if admin_signed_in? %>
 
   <%= attachment_image_tag @egogram, :egogram_image, size: "300x300" %>
-  
-  
+
+
     <p><%= @egogram.type_name %></p>
     <h3>長所</h3>
     <p><%= @egogram.strong_point_title %></p>
@@ -16,8 +16,9 @@
     <p><%= @egogram.advice_title %></p>
     <h3>アドバイス説明</h3>
     <p><%= @egogram.advice_body %></p>
-  
+
   <%= link_to "egogram_edit", edit_admins_egogram_path %>
+  <%= link_to 'Destroy', admins_egogram_path(@egogram.id), method: :delete %>
 <% else %>
   <div class="container no-page">
     <div class="row">

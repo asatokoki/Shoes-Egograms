@@ -27,6 +27,12 @@ class Admins::EgogramsController < ApplicationController
     redirect_to admins_egogram_path
   end
 
+  def destroy
+    @egogram = Egogram.find(params[:id])
+    @egogram.destroy
+    redirect_to root_path
+  end
+
   private
 
   def egogram_params
