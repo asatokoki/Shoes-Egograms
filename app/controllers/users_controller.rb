@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.page(params[:page]).per(12)
+    @users = User.page(params[:page]).per(15)
     #例 artistカラムの値が'ももいろクローバーZ' ではないレコードを取得
 #@discography = Discography.where.not(artist: 'ももいろクローバーZ')
 

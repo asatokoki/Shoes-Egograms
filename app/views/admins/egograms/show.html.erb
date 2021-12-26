@@ -1,18 +1,29 @@
-<%= attachment_image_tag @egogram, :egogram_image, size: "300x300" %>
+<% if admin_signed_in? %>
 
-
-  <p><%= @egogram.type_name %></p>
-  <h3>長所</h3>
-  <p><%= @egogram.strong_point_title %></p>
-  <h3>長所説明</h3>
-  <p><%= @egogram.strong_point_body %></p>
-  <h3>短所</h3>
-  <p><%= @egogram.weak_point_title %></p>
-  <h3>短所説明</h3>
-  <p><%= @egogram.weak_point_body %></p>
-  <h3>アドバイス</h3>
-  <p><%= @egogram.advice_title %></p>
-  <h3>アドバイス説明</h3>
-  <p><%= @egogram.advice_body %></p>
-
-<%= link_to "egogram_edit", edit_admins_egogram_path %>
+  <%= attachment_image_tag @egogram, :egogram_image, size: "300x300" %>
+  
+  
+    <p><%= @egogram.type_name %></p>
+    <h3>長所</h3>
+    <p><%= @egogram.strong_point_title %></p>
+    <h3>長所説明</h3>
+    <p><%= @egogram.strong_point_body %></p>
+    <h3>短所</h3>
+    <p><%= @egogram.weak_point_title %></p>
+    <h3>短所説明</h3>
+    <p><%= @egogram.weak_point_body %></p>
+    <h3>アドバイス</h3>
+    <p><%= @egogram.advice_title %></p>
+    <h3>アドバイス説明</h3>
+    <p><%= @egogram.advice_body %></p>
+  
+  <%= link_to "egogram_edit", edit_admins_egogram_path %>
+<% else %>
+  <div class="container no-page">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1>このページは存在しません</h1>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,12 +1,23 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 text-center">
-      <% @users.each do |user| %>
-        <%= link_to user_path(user) do %>
-          <%= attachment_image_tag user, :profile_image,  size: "300x300" %>
+<% if admin_signed_in? %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <% @users.each do |user| %>
+          <%= link_to user_path(user) do %>
+            <%= attachment_image_tag user, :profile_image,  size: "300x300" %>
+          <% end %>
         <% end %>
-      <% end %>
-      <%= paginate @users %>
+        <%= paginate @users %>
+      </div>
     </div>
   </div>
-</div>
+<% else %>
+  <div class="container no-page">
+    <div class="row">
+      <div class="col-12 text-center no-page">
+        <h1>このページは存在しません</h1>
+      </div>
+    </div>
+  </div>
+<% end %>

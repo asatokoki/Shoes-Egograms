@@ -1,24 +1,24 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-2">
+    <div class="col-12 text-center">
       <%= attachment_image_tag @egogram, :egogram_image, size: "200x200" %>
-      <%= @egogram.type_name %>
-      <p>タイプ</p>
+      <h3><%= @egogram.type_name %></h3>
     </div>
-    <div class="col-7 offset-md-1">
+
+    <div class="col-12">
       <h3>長所</h3>
-      <p><%= @egogram.strong_point_title %></p>
-      <h3>長所説明</h3>
-      <p><%= @egogram.strong_point_body %></p>
+      <h4>"<%= @egogram.strong_point_title %>"</h4>
+      <p>"<%= @egogram.strong_point_body %>"</p>
       <h3>短所</h3>
-      <p><%= @egogram.weak_point_title %></p>
-      <h3>短所説明</h3>
-      <p><%= @egogram.weak_point_body %></p>
+      <h4>"<%= @egogram.weak_point_title %>"</h4>
+      <p>"<%= @egogram.weak_point_body %>"</p>
       <h3>アドバイス</h3>
-      <p><%= @egogram.advice_title %></p>
-      <h3>アドバイス説明</h3>
-      <p><%= @egogram.advice_body %></p>
+      <h4>"<%= @egogram.advice_title %>"</h4>
+      <p>"<%= @egogram.advice_body %>"</p>
+
+      <a href="https://www.amazon.co.jp/%E8%B6%85%E3%82%AB%E3%83%B3%E3%82%BF%E3%83%B3-%E3%82%A8%E3%82%B4%E3%82%B0%E3%83%A9%E3%83%A0%E3%81%A7%E5%BF%83%E7%90%86%E5%88%86%E6%9E%90-%E3%83%97%E3%83%AC%E3%82%B8%E3%83%87%E3%83%B3%E3%83%88%E3%83%A0%E3%83%83%E3%82%AF-%E9%81%A0%E8%97%A4-%E5%96%9C%E4%B9%85%E9%9B%84/dp/4833475073
+">	遠藤喜久雄『超カンタン エゴグラムで心理分析』プレジデント社、2016年04月 年</a>
     </div>
   </div>
 </div>

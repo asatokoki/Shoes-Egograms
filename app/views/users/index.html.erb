@@ -9,10 +9,9 @@
               <%= attachment_image_tag user, :profile_image,  size: "200x200", class: 'p-3 radius-imgae oya' %>
               <h6>済</h6>
             <% else %>
-              <%= attachment_image_tag user, :profile_image,  size: "200x200", class: 'p-3 radius-imgae opacity-50' %>
+              <%= attachment_image_tag user, :profile_image,  size: "200x200", class: 'p-3 radius-imgae opacity-30' %>
             <% end %>
           <% end %>
-
           <p><%= AcPoint.where(evaluated_user_id: user.id, point: 0..2).count %>人に評価されています</p>
         </div>
         <% end %>

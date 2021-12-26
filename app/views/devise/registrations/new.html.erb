@@ -1,56 +1,61 @@
+<div class="container">
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
 　<!--<div class="field">-->
   <!--<div class="field">-->
     <%#= f.label :性別 %>
     <%#= f.attachment_field :profile_image_id %>
   <!--</div>-->
-<div class="main">
-  <div class="field">
+  <div class="row">
+    <div class="col-4">
+        <%= render "devise/shared/error_messages", resource: resource %>
+      </div>
 
-    <p>私の名前は<%= f.text_field :name, placeholder: "ニックネーム" %>です。<br>
-    年齢<%= f.text_field :age, placeholder: "半角数字" %>歳です。<br>
-    性別は<%= f.text_field :gender, placeholder: "男or女orその他" %>です<br>
-    職業は <%= f.text_field :job, placeholder: "職業を記入" %>で<br>
-    <%= f.text_field :job_details, placeholder: "さらに詳しく記入" %>しています<br>
-    年収は<%= f.text_field :annual_income, placeholder: "半角数字" %>万円です。<br>
-    趣味は<%= f.text_field :hobbies, placeholder: "趣味を記入" %>で<br>
-    <%= f.text_field :hobbies_details, placeholder: "さらに詳しく記入" %>です。
-    </p>
+    <div class="col-4">
+      <p>私の名前は<%= f.text_field :name, placeholder: "ニックネーム" %>です。<br>
+      年齢<%= f.text_field :age, placeholder: "半角数字" %>歳です。<br>
+      性別は<%= f.text_field :gender, placeholder: "男or女orその他" %>です<br>
+      職業は <%= f.text_field :job, placeholder: "職業を記入" %>で<br>
+      <%= f.text_field :job_details, placeholder: "さらに詳しく記入" %>しています<br>
+      年収は<%= f.text_field :annual_income, placeholder: "半角数字" %>万円です。<br>
+      趣味は<%= f.text_field :hobbies, placeholder: "趣味を記入" %>で<br>
+      <%= f.text_field :hobbies_details, placeholder: "さらに詳しく記入" %>です。
+      </p>
+       <%= f.attachment_field :profile_image %>
+     <p>※画像の比率はアスペクト比 [1:1]（スクエア）がオススメです</p>
+    <div class="col-4">
+      <div class="field">
+        <%= f.label :メールアドレス %><br />
+        <%= f.email_field :email %>
+      </div>
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up", class: "btn topbtn" %>
+      </div>
+    </div>
+    </div>
+
+
   </div>
 
 
-<div class="field">
-    <%= f.attachment_field :profile_image %>
-</div>
 
 
 
 
-
-
-  <div class="field">
-    <%= f.label :メールアドレス %><br />
-    <%= f.email_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up", class: "btn topbtn" %>
-  </div>
 <% end %>
 
 </div>
