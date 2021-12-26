@@ -6,9 +6,11 @@ class Admins::EgogramsController < ApplicationController
 
   def create
     @egogram = Egogram.new(egogram_params)
-
-    @egogram.save
-    redirect_to admins_egograms_path
+    if @egogram.save
+      redirect_to admins_egograms_path
+    else
+      redirect_to admins_egograms_path
+    end
   end
 
   def show
