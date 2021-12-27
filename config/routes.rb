@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'homes#top'
+  get 'about' => 'homes#about'
   # 下のresources :usersを先に記述していたらそこを、優先的に読み込んでしまう
   get 'users/my_page/' => 'users#my_page'
   get 'users/edit' => 'users#edit'
