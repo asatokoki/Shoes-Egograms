@@ -40,7 +40,7 @@
     <%= form_tag "/points", method: :post do %>
       <div class="row">
         <div class="col-12 text-center pt-3 ">
-          この靴の持ち主は"<%= @cp_questions.sample %>"と思う<br>
+          <p>この靴の持ち主は"<%= @cp_questions.sample %>"と思う<br></p>
           <%= label_tag :cp_point, "いいえ" %>
           <%= radio_button_tag :cp_point, 0 %>
           <%= label_tag :cp_point, "どちらでもない" %>
@@ -51,7 +51,7 @@
       </div>
       <div class="row">
         <div class="col-12 text-center pt-3 ">
-          この靴の持ち主は"<%= @np_questions.sample %>"と思う<br>
+          <p>この靴の持ち主は"<%= @np_questions.sample %>"と思う<br></p>
           <%= label_tag :np_point, "いいえ" %>
           <%= radio_button_tag :np_point, 0 %>
           <%= label_tag :np_point, "どちらでもない" %>
@@ -62,7 +62,7 @@
       </div>
       <div class="row">
         <div class="col-12 text-center pt-3 ">
-          この靴の持ち主は"<%= @a_questions.sample %>"と思う<br>
+          <p>この靴の持ち主は"<%= @a_questions.sample %>"と思う<br></p>
           <%= label_tag :a_point, "いいえ" %>
           <%= radio_button_tag :a_point, 0 %>
           <%= label_tag :a_point, "どちらでもない" %>
@@ -73,7 +73,7 @@
       </div>
       <div class="row">
         <div class="col-12 text-center pt-3 ">
-          この靴の持ち主は"<%= @fc_questions.sample %>"と思う<br>
+          <p>この靴の持ち主は"<%= @fc_questions.sample %>"と思う<br></p>
           <%= label_tag :fc_point, "いいえ" %>
           <%= radio_button_tag :fc_point, 0 %>
           <%= label_tag :fc_point, "どちらでもない" %>
@@ -84,7 +84,7 @@
       </div>
       <div class="row">
         <div class="col-12 text-center pt-3 ">
-          この靴の持ち主は"<%= @ac_questions.sample %>"と思う<br>
+          <p>この靴の持ち主は"<%= @ac_questions.sample %>"と思う<br></p>
           <%= label_tag :ac_point, "いいえ" %>
           <%= radio_button_tag :ac_point, 0 %>
           <%= label_tag :ac_point, "どちらでもない" %>
