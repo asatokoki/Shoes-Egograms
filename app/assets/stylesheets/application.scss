@@ -74,6 +74,10 @@
   top: 25%;
 }
 
+.abso-25 h1{
+  font-size: 80px;
+}
+
 
 .abso-50{
   position: absolute;
@@ -119,6 +123,10 @@
 .submit{
   background-color: #83725F;
   color: white;
+  width: 270px;
+  height: 55px;
+  line-height: 40px;
+  font-size: 20px;
 }
 
 
@@ -127,8 +135,9 @@
 .btn{
   color: white;
   background-color: #83725F;
-  box-shadow: 0 10px #4d3f36;
+  // box-shadow: 0 10px #4d3f36;
   opacity: 0.9;
+  border-radius: 50px;
 }
 
 .btn:hover {
@@ -138,7 +147,7 @@
 .btn:active{
   box-shadow: none;
   position: relative;
-  top: 7px;
+  top: 2px;
 }
 
 .no-page{
